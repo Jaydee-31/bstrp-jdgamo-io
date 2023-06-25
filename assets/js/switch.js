@@ -57,8 +57,8 @@
         }
 
         // set light switch input to true
-        if (!lightSwitch.checked) {
-            lightSwitch.checked = true;
+        if (lightSwitch.checked) {
+          lightSwitch.checked = true;
         }
         localStorage.setItem("lightSwitch", "dark");
     }
@@ -107,8 +107,8 @@
             }
         }
 
-        if (lightSwitch.checked) {
-            lightSwitch.checked = false;
+        if (!lightSwitch.checked) {
+          lightSwitch.checked = false;
         }
         localStorage.setItem("lightSwitch", "light");
     }
@@ -118,10 +118,10 @@
      * @summary: the event handler attached to the switch. calling @darkMode or @lightMode depending on the checked state.
      */
     function onToggleMode() {
-        if (lightSwitch.checked) {
-            darkMode();
+        if (!lightSwitch.checked) {
+          darkMode();
         } else {
-            lightMode();
+          lightMode();
         }
     }
 

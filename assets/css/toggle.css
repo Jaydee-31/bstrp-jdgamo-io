@@ -1,0 +1,61 @@
+/* .lightSwitch {
+	background-color: #000000 ;
+
+} */
+
+
+.switch-box {
+    align-self: center;
+    position: absolute;
+    top: 0;
+}
+.form-switch {
+    padding-left: 0;
+    top: 0;
+  }
+label {
+	
+	display: flex;
+	height: 15px;
+	border-radius: 50px;
+	width: 45px;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	transition: all .5s ease-in-out;
+	cursor: pointer;
+   
+}
+.bg-dark .label {
+    outline: #ffffff solid 5px;
+    background-color: #ffffff;
+}
+.bg-light .label {
+    background-color: #172439;
+    outline: #172439 solid 5px;
+}
+label .bxs-moon {
+	color: rgb(0, 0, 0);
+
+}
+label .bxs-sun {
+	color: #fff;
+   
+}
+.blob {
+	position: absolute;
+	left: 65%;
+	width: 15px;
+	height: 100%;
+	background: #ffdd00;
+	border-radius: 50px;
+	transition: .5s ease all;
+}
+.checkbox {
+	opacity: 0;
+
+}
+
+.checkbox:checked + .label .blob {
+	left: 0;
+}
