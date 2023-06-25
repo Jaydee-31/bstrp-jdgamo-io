@@ -190,7 +190,7 @@ h6 {
   }
   section {
     /* margin: 0 0 0 100px; */
-    padding: 60px 20px;
+    padding: 60px 0;
     overflow: hidden;
   }
 }
@@ -821,6 +821,9 @@ h6 {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+.resume ul {
+  padding-left: 0;
+}
 .resume .resume-title {
   font-size: 20px;
   font-weight: 600;
@@ -855,7 +858,7 @@ h6 {
 }
 
 .resume .resume-item ul {
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
 .resume .resume-item ul li {
