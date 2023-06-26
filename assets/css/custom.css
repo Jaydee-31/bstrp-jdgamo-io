@@ -1,16 +1,17 @@
 #lightSwitch {
-  transform: scale(1.5);
+	transform: scale(1.5);
 }
 
 .bg-light {
-  background: rgb(255 255 255);
-  /* background: radial-gradient(circle, rgba(232,232,232,1) 0%, rgba(253,244,255,1) 100%);
+	background: rgb(255 255 255);
+	/* background: radial-gradient(circle, rgba(232,232,232,1) 0%, rgba(253,244,255,1) 100%);
   border-radius: 3px; */
-  color: rgb(16, 16, 16) !important;
+	color: rgb(16, 16, 16) !important;
 }
 
 .bg-dark {
-  /* background-color: rgb(15 23 42) !important; */
-  background-image: linear-gradient(to left top, #000116, #04061a, #080b1d, #0b0f21, #0d1325, #101829, #131c2c, #172130, #1e2935, #273039, #30383d, #3a3f42) !important;
-  color: rgb(247, 247, 247) !important;
+	/* background-color: rgb(15 23 42) !important; */
+	background: #040b14 !important;
+	/* background-image: linear-gradient(to left top, #000116, #04061a, #080b1d, #0b0f21, #0d1325, #101829, #131c2c, #172130, #1e2935, #273039, #30383d, #3a3f42) !important; */
+	color: rgb(247, 247, 247) !important;
 }

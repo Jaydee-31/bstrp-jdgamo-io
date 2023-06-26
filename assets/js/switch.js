@@ -22,22 +22,10 @@
 			element.className = element.className.replace(/light-/g, "dark-");
 		});
 
-		document.querySelectorAll(".light-link").forEach((element) => {
-			element.className = element.className.replace(/light-/g, "dark-");
-		});
-
-		document.getElementById("light-hero").setAttribute("id", "dark-hero");
-		document.getElementById("link").setAttribute("href", "#dark-hero");
-		document.getElementById("light-header").setAttribute("id", "dark-header");
-
 		document.querySelectorAll(".light-txt").forEach((element) => {
 			element.className = element.className.replace(/light-/g, "dark-");
 		});
 
-		document.querySelectorAll(".link-dark").forEach((element) => {
-			element.className = element.className.replace(/link-dark/, "text-white");
-		});
-		document.body.classList.add("bg-dark");
 		document.body.classList.add("bg-dark");
 
 		if (document.body.classList.contains("text-dark")) {
@@ -73,17 +61,6 @@
 			element.className = element.className.replace(/dark-/g, "light-");
 		});
 
-		document.querySelectorAll(".dark-link").forEach((element) => {
-			element.className = element.className.replace(/dark-/g, "light-");
-		});
-
-		document.getElementById("dark-hero").setAttribute("id", "light-hero");
-		document.getElementById("link").setAttribute("href", "#light-hero");
-		document.getElementById("dark-header").setAttribute("id", "light-header");
-
-		document.querySelectorAll(".text-white").forEach((element) => {
-			element.className = element.className.replace(/text-white/, "link-dark");
-		});
 
 		document.body.classList.add("bg-light");
 

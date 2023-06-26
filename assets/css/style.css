@@ -2,7 +2,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: "Lexend Deca", sans-serif;
+	/*  */
 	/* font-family: "Open Sans", sans-serif; */
 }
 
@@ -141,7 +142,7 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#light-header {
+.bg-light #header {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -151,7 +152,7 @@ h6 {
 	padding: 15px;
 	overflow-y: auto;
 }
-#dark-header {
+.bg-dark #header {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -163,15 +164,15 @@ h6 {
 }
 
 @media (max-width: 991px) {
-	#light-header {
+	.bg-light #header {
 		width: 300px;
-		background: #fff;
+		background: #f6f6f6;
 		border-right: 1px solid #e6e9ec;
 		left: -300px;
 	}
-	#dark-header {
+	.bg-dark #header {
 		width: 300px;
-		background: rgb(15 23 42);
+		background: #040b14;
 		border-right: 1px solid #1b1b1b;
 		left: -300px;
 	}
@@ -185,11 +186,11 @@ h6 {
 
 @media only screen and (max-width: 991px) {
 	main {
-		padding: 60px 20px;
+		padding: 60px 0px;
 	}
 	section {
 		/* margin: 0 0 0 100px; */
-		padding: 60px 0;
+		padding: 90px 20px;
 		overflow: hidden;
 	}
 }
@@ -199,7 +200,7 @@ h6 {
 	}
 	section {
 		/* margin: 0 0 0 100px; */
-		padding: 60px 100px;
+		padding: 90px 100px;
 		overflow: hidden;
 	}
 }
@@ -211,12 +212,14 @@ h6 {
 * Desktop Navigation 
 */
 
-.light-link {
-	background: #d7dce1;
+.bg-light .nav-link {
+	background: #ffffff;
+	color: #000;
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.095);
 }
 
-.dark-link {
-	background: #121212;
+.bg-dark .nav-link {
+	background: #0f1721;
 	color: #f0f0f0 !important;
 }
 
@@ -260,6 +263,7 @@ h6 {
 .nav-menu a span,
 .nav-menu a:focus span {
 	padding: 0 5px 0 7px;
+	font-family: "Poppins", sans-serif;
 }
 
 @media (min-width: 992px) {
@@ -328,10 +332,7 @@ h6 {
 	overflow: hidden;
 }
 
-.mobile-nav-active #light-header {
-	left: 0;
-}
-.mobile-nav-active #dark-header {
+.mobile-nav-active #header {
 	left: 0;
 }
 
@@ -343,7 +344,7 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#light-hero {
+.bg-light #hero {
 	width: 100%;
 	height: 100vh;
 	background: url("../img/hero-bg.jpg") top right no-repeat;
@@ -351,7 +352,7 @@ h6 {
 	position: relative;
 }
 
-#dark-hero {
+.bg-dark #hero {
 	width: 100%;
 	height: 100vh;
 	background: url("../img/dark-hero-bg.jpg") top right no-repeat;
@@ -360,15 +361,15 @@ h6 {
 }
 
 @media (min-width: 992px) {
-	#light-hero {
+	.bg-light #hero {
 		padding-left: 160px;
 	}
-	#dark-hero {
+	.bg-dark #hero {
 		padding-left: 160px;
 	}
 }
 
-#light-hero:before {
+.bg-light #hero:before {
 	content: "";
 	background: rgba(255, 255, 255, 0.8);
 	position: absolute;
@@ -378,35 +379,35 @@ h6 {
 	right: 0;
 }
 
-#light-hero h1 {
+.bg-light #hero h1 {
 	margin: 0;
 	font-size: 64px;
 	font-weight: 700;
 	line-height: 56px;
 }
 
-#light-hero p {
+.bg-light #hero p {
 	color: #45505b;
 	margin: 15px 0 0 0;
 	font-size: 26px;
-	font-family: "Poppins", sans-serif;
+	font-family: "Lexend Deca", sans-serif;
 }
 
-#light-hero p span {
+.bg-light #hero p span {
 	color: #0563bb;
 	letter-spacing: 1px;
 }
 
-#dark-hero p span {
+.bg-dark #hero p span {
 	color: #2797ff !important;
 	letter-spacing: 1px;
 }
 
-#light-hero .social-links {
+.bg-light #hero .social-links {
 	margin-top: 30px;
 }
 
-#light-hero .social-links a {
+.bg-light #hero .social-links a {
 	font-size: 24px;
 	display: inline-block;
 	color: #45505b;
@@ -415,21 +416,21 @@ h6 {
 	transition: 0.3s;
 }
 
-#light-hero .social-links a:hover {
+.bg-light #hero .social-links a:hover {
 	color: #0563bb;
 }
 
 @media (max-width: 992px) {
-	#light-hero {
+	.bg-light #hero {
 		text-align: center;
 	}
 
-	#light-hero h1 {
+	.bg-light #hero h1 {
 		font-size: 32px;
 		line-height: 36px;
 	}
 
-	#light-hero p {
+	.bg-light #hero p {
 		margin-top: 10px;
 		font-size: 20px;
 		line-height: 24px;
@@ -439,7 +440,7 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#light-hero {
+.bg-light #hero {
 	width: 100%;
 	height: 100vh;
 	background: url("../img/hero-bg.jpg") top right no-repeat;
@@ -448,12 +449,12 @@ h6 {
 }
 
 @media (min-width: 992px) {
-	#light-hero {
+	.bg-light #hero {
 		padding-left: 160px;
 	}
 }
 
-#light-hero:before {
+.bg-light #hero:before {
 	content: "";
 	background: rgba(255, 255, 255, 0.8);
 	position: absolute;
@@ -463,7 +464,7 @@ h6 {
 	right: 0;
 }
 
-#light-hero h1 {
+.bg-light #hero h1 {
 	margin: 0;
 	font-size: 64px;
 	font-weight: 700;
@@ -471,23 +472,23 @@ h6 {
 	color: #45505b;
 }
 
-#light-hero p {
+.bg-light #hero p {
 	color: #45505b;
 	margin: 15px 0 0 0;
 	font-size: 26px;
-	font-family: "Poppins", sans-serif;
+	font-family: "Lexend Deca", sans-serif;
 }
 
-#light-hero p span {
+.bg-light #hero p span {
 	color: #0563bb;
 	letter-spacing: 1px;
 }
 
-#light-hero .social-links {
+.bg-light #hero .social-links {
 	margin-top: 30px;
 }
 
-#light-hero .social-links a {
+.bg-light #hero .social-links a {
 	font-size: 24px;
 	display: inline-block;
 	color: #45505b;
@@ -496,21 +497,21 @@ h6 {
 	transition: 0.3s;
 }
 
-#light-hero .social-links a:hover {
+.bg-light #hero .social-links a:hover {
 	color: #0563bb;
 }
 
 @media (max-width: 992px) {
-	#light-hero {
+	.bg-light #hero {
 		text-align: center;
 	}
 
-	#light-hero h1 {
+	.bg-light #hero h1 {
 		font-size: 32px;
 		line-height: 36px;
 	}
 
-	#light-hero p {
+	.bg-light #hero p {
 		margin-top: 10px;
 		font-size: 20px;
 		line-height: 24px;
@@ -521,7 +522,7 @@ h6 {
 # Dark Hero Section
 --------------------------------------------------------------*/
 
-#dark-hero {
+.bg-dark #hero {
 	width: 100%;
 	height: 100vh;
 	background: url("../img/dark-hero-bg.jpg") top right no-repeat;
@@ -530,14 +531,14 @@ h6 {
 }
 
 @media (min-width: 992px) {
-	#dark-hero {
+	.bg-dark #hero {
 		padding-left: 160px;
 	}
 }
 
-#dark-hero:before {
+.bg-dark #hero:before {
 	content: "";
-	background: rgba(34, 34, 34, 0.8);
+	background: #040b14e6;
 	position: absolute;
 	bottom: 0;
 	top: 0;
@@ -545,7 +546,7 @@ h6 {
 	right: 0;
 }
 
-#dark-hero h1 {
+.bg-dark #hero h1 {
 	margin: 0;
 	font-size: 64px;
 	font-weight: 700;
@@ -553,23 +554,23 @@ h6 {
 	opacity: 0.8;
 }
 
-#dark-hero p {
+.bg-dark #hero p {
 	color: #45505b;
 	margin: 15px 0 0 0;
 	font-size: 26px;
-	font-family: "Poppins", sans-serif;
+	font-family: "Lexend Deca", sans-serif;
 }
 
-#dark-hero p span {
+.bg-dark #hero p span {
 	color: #0563bb;
 	letter-spacing: 1px;
 }
 
-#dark-hero .social-links {
+.bg-dark #hero .social-links {
 	margin-top: 30px;
 }
 
-#dark-hero .social-links a {
+.bg-dark #hero .social-links a {
 	font-size: 24px;
 	display: inline-block;
 	color: #e9e9e9;
@@ -578,21 +579,21 @@ h6 {
 	transition: 0.3s;
 }
 
-#dark-hero .social-links a:hover {
+.bg-dark #hero .social-links a:hover {
 	color: #0563bb;
 }
 
 @media (max-width: 991px) {
-	#dark-hero {
+	.bg-dark #hero {
 		text-align: center;
 	}
 
-	#dark-hero h1 {
+	.bg-dark #hero h1 {
 		font-size: 32px;
 		line-height: 36px;
 	}
 
-	#dark-hero p {
+	.bg-dark #hero p {
 		margin-top: 10px;
 		font-size: 20px;
 		line-height: 24px;
@@ -605,15 +606,16 @@ h6 {
 
 .section-title {
 	text-align: center;
-	padding-bottom: 30px;
+	margin-bottom: 5em;
 }
 
 .section-title h2 {
-	font-size: 48px;
-	font-weight: 500;
-	text-transform: capitalize;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
+	font-size: 3rem;
+	line-height: 1;
+	font-family: "Lexend Deca", sans-serif;
+	font-weight: 400;
+	margin-bottom: 5px;
+	padding-bottom: 10px;
 	position: relative;
 }
 
@@ -640,13 +642,17 @@ h6 {
 }
 
 .section-title p {
-	font-size: 16px;
+	font-size: 14px;
 	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about img {
+	border: 1rem solid #fff;
+	border-radius: 10%;
+}
 .about .content h3 {
 	font-weight: 700;
 	font-size: 26px;
@@ -686,7 +692,7 @@ h6 {
 /*--------------------------------------------------------------
 # Facts
 --------------------------------------------------------------*/
-.facts .count-box {
+/* .facts .count-box {
 	padding: 30px 30px 25px 30px;
 	margin-top: 30px;
 	width: 100%;
@@ -694,12 +700,18 @@ h6 {
 	text-align: center;
 	border-radius: 20px;
 	box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.485);
+} */
+.bg-dark .about .count-box {
+	background-color: #0f1721;
+}
+.bg-light .about .count-box {
+	background-color: #fff;
 }
 .light-bg {
 	background: #fff;
 }
 .dark-bg {
-	background: #1b1c22;
+	background: #0f1721;
 }
 .light-txt {
 	color: #363636;
@@ -754,6 +766,12 @@ h6 {
 .skills .card-body .row .col {
 	margin-bottom: 1.5rem;
 }
+.bg-light .skills .card {
+	background-color: #fff;
+}
+.bg-dark .skills .card {
+	background-color: #0f1721;
+}
 .skills .card {
 	text-align: center;
 	padding: 20px 20px;
@@ -766,7 +784,7 @@ h6 {
 	text-align: left;
 	font-weight: 500;
 	background-image: none;
-	background-color: #181818 !important;
+	background-color: #040b14 !important;
 }
 
 .bg-light .skills .card .skill {
@@ -774,7 +792,7 @@ h6 {
 	font-size: 12px;
 	font-weight: 500;
 	background-image: none;
-	background-color: #d9d9d9 !important;
+	background-color: #d7dce1 !important;
 }
 .skills .card:hover {
 	border-color: #fff;
@@ -857,7 +875,7 @@ h6 {
 	line-height: 18px;
 	font-size: 16px;
 	font-weight: 600;
-	font-family: "Poppins", sans-serif;
+
 	color: #0563bb;
 	margin-bottom: 10px;
 }
@@ -1139,6 +1157,12 @@ h6 {
 	transition: all ease-in-out 0.3s;
 	border-radius: 20px;
 	box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.05);
+}
+.bg-light .services .icon-box {
+	background-color: #fff;
+}
+.bg-dark .services .icon-box {
+	background-color: #0f1721;
 }
 
 .services .icon-box .icon {
@@ -1631,7 +1655,7 @@ h6 {
 	font-size: 36px;
 	font-weight: 700;
 	position: relative;
-	font-family: "Poppins", sans-serif;
+
 	padding: 0;
 	margin: 0 0 15px 0;
 }
