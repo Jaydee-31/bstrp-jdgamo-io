@@ -744,9 +744,10 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .title {
+	text-align: left;
 	margin-bottom: 1.5rem;
 }
 
@@ -780,8 +781,11 @@ h6 {
 	box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 	transform: scale(1.05) rotate(-2deg);
 }
-.skills .title i,
-.skill svg {
+.skills .card .col:hover {
+	transition: all ease-in-out 0.3s;
+	transform: scale(1.05) rotate(-1deg);
+}
+.skills .title i {
 	font-size: 30px;
 
 	display: inline-flex;
