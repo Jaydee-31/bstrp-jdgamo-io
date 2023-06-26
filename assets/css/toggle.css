@@ -44,7 +44,7 @@ label .bxs-sun {
 }
 .blob {
 	position: absolute;
-	left: 65%;
+	right: 65%;
 	width: 15px;
 	height: 100%;
 	background: #ffdd00;
@@ -57,5 +57,5 @@ label .bxs-sun {
 }
 
 .checkbox:checked + .label .blob {
-	left: 0;
+	right: 0;
 }
