@@ -1,0 +1,91 @@
+.portfolio .nav {
+	border-radius: 30px;
+}
+
+.portfolio .nav .rounded-left {
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding-left: 20px;
+}
+
+.portfolio .nav .rounded-right {
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding-right: 20px;
+}
+
+.portfolio .card-group.card-group-scroll {
+	scroll-snap-type: x mandatory;
+}
+
+@media (min-width: 576px) {
+	.portfolio .card-group.card-group-scroll {
+		overflow-x: auto;
+		flex-wrap: nowrap;
+	}
+}
+
+.portfolio .card-group.card-group-scroll > .card {
+	flex-basis: 35%;
+	scroll-snap-align: center;
+	margin: 20px 20px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+	box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.148);
+	overflow: hidden;
+}
+.portfolio .card-group.card-group-scroll > .card img {
+	object-fit: cover;
+}
+
+@media (max-width: 575px) {
+	.portfolio .card-group.card-group-scroll {
+		overflow-x: auto;
+		flex-wrap: nowrap;
+	}
+	.portfolio .card-group {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.portfolio .card-group.card-group-scroll > .card {
+		flex-basis: 90%;
+		flex-shrink: 0;
+	}
+}
+
+/* Swiper */
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide {
+	text-align: left;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2.5em;
+}
+
+.swiper-slide .card {
+	overflow: hidden;
+	border-radius: 20px;
+	box-shadow: 0 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.swiper-slide .card .card-title {
+	font-size: 0.85em;
+}
