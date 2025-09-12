@@ -314,7 +314,7 @@ h6 {
 	top: 10px;
 	z-index: 9998;
 	border: 0;
-	background: none;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.653));
 	font-size: 28px;
 	transition: all 0.4s;
 	outline: none !important;
@@ -338,7 +338,7 @@ h6 {
 
 .mobile-nav-active .mobile-nav-toggle {
 	color: #fff;
-	background-color: #0563bb;
+	background: #0563bb;
 }
 
 /*--------------------------------------------------------------
@@ -1109,6 +1109,10 @@ h6 {
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
 	background-color: #0563bb;
+}
+
+.swiper {
+	overflow: visible;
 }
 
 .portfolio-details .portfolio-info {
