@@ -1,0 +1,9 @@
+.blur {
+	filter: blur(10px);
+	transition: filter 0.9s ease, opacity 0.9s ease;
+}
+
+.blur-loaded {
+	filter: blur(0);
+	opacity: 1;
+}
