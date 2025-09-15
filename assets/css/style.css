@@ -589,7 +589,7 @@ h6 {
 
 .bg-dark #hero:before {
 	content: "";
-	background: #040b14e6;
+	background: color-mix(in srgb, var(--gray-950), transparent 20%);
 	position: absolute;
 	bottom: 0;
 	top: 0;
