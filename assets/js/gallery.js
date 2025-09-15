@@ -2,7 +2,7 @@
 const filterButtons = document.querySelectorAll("#portfolio-flters li");
 
 function loadGallery() {
-	const gallery = document.querySelector(".gallery");
+	const gallery = document.querySelector(".masonry");
 
 	// Define your image groups with folder, prefix, count, and filter class
 	const imageGroups = [
@@ -29,6 +29,19 @@ function loadGallery() {
 // Call function on page load
 document.addEventListener("DOMContentLoaded", () => {
 	loadGallery();
+	//Lightbox
+	const lb = document.getElementById("lightbox"),
+		lbImg = document.getElementById("lightboxImg");
+	document.querySelectorAll(".masonry img").forEach((img) => {
+		img.onclick = () => {
+			lbImg.src = img.src;
+			lb.style.display = "flex";
+		};
+	});
+	lb.onclick = () => (lb.style.display = "none");
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") lb.style.display = "none";
+	});
 
 	// Add filter event AFTER gallery is loaded
 	const filterButtons = document.querySelectorAll("#portfolio-flters li");
@@ -39,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			btn.classList.add("filter-active");
 
 			const filter = btn.getAttribute("data-filter");
-			const galleryItems = document.querySelectorAll(".gallery img"); // <-- re-query here
+			const galleryItems = document.querySelectorAll(".masonry img"); // <-- re-query here
 
 			galleryItems.forEach((item) => {
 				if (filter === "*" || item.classList.contains(filter.substring(1))) {
