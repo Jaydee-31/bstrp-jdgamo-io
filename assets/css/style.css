@@ -131,6 +131,25 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Disable aos animation
+--------------------------------------------------------------*/
+/* Default hidden state */
+[data-aos] {
+	opacity: 0;
+	transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When in view */
+[data-aos].aos-animate {
+	opacity: 1;
+}
+
+/* When out of view (fade out) */
+[data-aos]:not(.aos-animate) {
+	opacity: 0;
+}
+
+/*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
@@ -911,12 +930,6 @@ h6 {
 	padding-bottom: 10px;
 }
 
-@media (max-width: 991px) {
-	.resume {
-		padding: 0px 0px;
-	}
-}
-
 .resume .resume-item:last-child {
 	padding-bottom: 0;
 }
@@ -1086,8 +1099,6 @@ h6 {
 	bottom: 15px;
 	right: 15px;
 }
-
-
 
 /*--------------------------------------------------------------
 # Portfolio Details
