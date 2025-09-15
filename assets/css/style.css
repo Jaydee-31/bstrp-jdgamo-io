@@ -1,6 +1,34 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+:root {
+	/* Gray */
+	--gray-50: #f9fafb;
+	--gray-100: #f3f4f6;
+	--gray-200: #e5e7eb;
+	--gray-300: #d1d5db;
+	--gray-400: #9ca3af;
+	--gray-500: #6b7280;
+	--gray-600: #4b5563;
+	--gray-700: #374151;
+	--gray-800: #1f2937;
+	--gray-900: #111827;
+	--gray-950: #030712;
+
+	--sky-50: #f0f9ff;
+	--sky-100: #e0f2fe;
+	--sky-200: #bae6fd;
+	--sky-300: #7dd3fc;
+	--sky-400: #38bdf8;
+	--sky-500: #0ea5e9;
+	--sky-600: #0284c7;
+	--sky-700: #0369a1;
+	--sky-800: #075985;
+	--sky-900: #0c4a6e;
+	--sky-950: #082f49;
+}
+
 body {
 	font-family: "Lexend Deca", sans-serif;
 	/*  */
@@ -8,12 +36,12 @@ body {
 }
 
 .bg-dark a {
-	color: #2998ff;
+	color: var(--sky-500);
 	text-decoration: none;
 }
 
 .bg-light a {
-	color: #0563bb;
+	color: var(--sky-600);
 	text-decoration: none;
 }
 
@@ -33,7 +61,7 @@ p {
 }
 
 a:hover {
-	color: #067ded;
+	color: var(--sky-500);
 	text-decoration: none;
 }
 
@@ -58,7 +86,7 @@ h6 {
 	right: 15px;
 	bottom: 15px;
 	z-index: 996;
-	background: #0563bb;
+	background: var(--sky-600);
 	width: 40px;
 	height: 40px;
 	border-radius: 50px;
@@ -100,7 +128,7 @@ h6 {
 	position: fixed;
 	top: calc(50% - 30px);
 	left: calc(50% - 30px);
-	border: 6px solid #0563bb;
+	border: 6px solid var(--sky-600);
 	border-top-color: #fff;
 	border-bottom-color: #fff;
 	border-radius: 50%;
@@ -191,7 +219,7 @@ h6 {
 	}
 	.bg-dark #header {
 		width: 300px;
-		background: #040b14;
+		background: var(--gray-950);
 		border-right: 1px solid #1b1b1b;
 		left: -300px;
 	}
@@ -303,7 +331,7 @@ h6 {
 .nav-menu .active:focus,
 .nav-menu li:hover > a {
 	color: #fff;
-	background: #0563bb;
+	background: var(--sky-600);
 }
 
 .nav-menu a:hover span,
@@ -361,7 +389,7 @@ h6 {
 
 .mobile-nav-active .mobile-nav-toggle {
 	color: #fff;
-	background: #0563bb;
+	background: var(--sky-600);
 }
 
 /*--------------------------------------------------------------
@@ -417,12 +445,12 @@ h6 {
 }
 
 .bg-light #hero p span {
-	color: #0563bb;
+	color: var(--sky-600);
 	letter-spacing: 1px;
 }
 
 .bg-dark #hero p span {
-	color: #2797ff !important;
+	color: var(--sky-500) !important;
 	letter-spacing: 1px;
 }
 
@@ -440,7 +468,7 @@ h6 {
 }
 
 .bg-light #hero .social-links a:hover {
-	color: #0563bb;
+	color: var(--sky-600);
 }
 
 @media (max-width: 992px) {
@@ -503,7 +531,7 @@ h6 {
 }
 
 .bg-light #hero p span {
-	color: #0563bb;
+	color: var(--sky-600);
 	letter-spacing: 1px;
 }
 
@@ -521,7 +549,7 @@ h6 {
 }
 
 .bg-light #hero .social-links a:hover {
-	color: #0563bb;
+	color: var(--sky-600);
 }
 
 @media (max-width: 992px) {
@@ -585,7 +613,7 @@ h6 {
 }
 
 .bg-dark #hero p span {
-	color: #0563bb;
+	color: var(--sky-600);
 	letter-spacing: 1px;
 }
 
@@ -603,7 +631,7 @@ h6 {
 }
 
 .bg-dark #hero .social-links a:hover {
-	color: #0563bb;
+	color: var(--sky-600);
 }
 
 @media (max-width: 991px) {
@@ -659,7 +687,7 @@ h6 {
 	display: block;
 	width: 40px;
 	height: 3px;
-	background: #0563bb;
+	background: var(--sky-600);
 	bottom: 0;
 	left: calc(50% - 20px);
 }
@@ -704,7 +732,7 @@ h6 {
 
 .about .content ul i {
 	margin-right: 5px;
-	color: #0563bb;
+	color: var(--sky-600);
 	line-height: 0;
 }
 
@@ -754,7 +782,7 @@ h6 {
 }
 .about .count-box i {
 	font-size: 16px;
-	background: #0563bb;
+	background: var(--sky-600);
 	color: #fff;
 	border-radius: 50px;
 	display: inline-flex;
@@ -807,7 +835,7 @@ h6 {
 	text-align: left;
 	font-weight: 500;
 	background-image: none;
-	background-color: #040b14 !important;
+	background-color: var(--gray-950) !important;
 }
 
 .bg-light .skills .card .skill {
@@ -890,7 +918,7 @@ h6 {
 .resume .resume-item {
 	padding: 0 0 20px 20px;
 	margin-top: -2px;
-	border-left: 2px solid #0563bb;
+	border-left: 2px solid var(--sky-600);
 	position: relative;
 }
 
@@ -899,7 +927,7 @@ h6 {
 	font-size: 16px;
 	font-weight: 600;
 
-	color: #0563bb;
+	color: var(--sky-600);
 	margin-bottom: 10px;
 }
 
@@ -943,16 +971,27 @@ h6 {
 	left: -9px;
 	top: 0;
 	background: #ebebeb;
-	border: 2px solid #0563bb;
+	border: 2px solid var(--sky-600);
 }
 
 /*--------------------------------------------------------------
-# Portfolio
+# Portfolio1
 --------------------------------------------------------------*/
-.portfolio .portfolio-item {
-	margin-bottom: 30px;
+.bg-dark .swiper-pagination-bullet {
+	background-color: var(--sky-500);
 }
 
+.swiper-pagination-bullet-active {
+	background-color: var(--sky-500);
+}
+
+.swiper {
+	overflow: visible;
+}
+
+/*--------------------------------------------------------------
+# Portfolio2
+--------------------------------------------------------------*/
 .portfolio #portfolio-flters {
 	padding: 0;
 	margin: 0 auto 25px auto;
@@ -975,198 +1014,11 @@ h6 {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-	color: #0563bb;
+	color: var(--sky-500);
 }
 
 .portfolio #portfolio-flters li:last-child {
 	margin-right: 0;
-}
-
-.portfolio .portfolio-wrap {
-	transition: 0.3s;
-	position: relative;
-	overflow: hidden;
-	z-index: 1;
-	background: rgba(69, 80, 91, 0.8);
-}
-
-.portfolio .portfolio-wrap::before {
-	content: "";
-	background: rgba(255, 255, 255, 0.7);
-	position: absolute;
-	left: 30px;
-	right: 30px;
-	top: 30px;
-	bottom: 30px;
-	transition: all ease-in-out 0.3s;
-	z-index: 2;
-	opacity: 0;
-}
-
-.portfolio .portfolio-wrap .portfolio-info {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	text-align: center;
-	z-index: 3;
-	transition: all ease-in-out 0.3s;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.portfolio .portfolio-wrap .portfolio-info::before {
-	display: block;
-	content: "";
-	width: 48px;
-	height: 48px;
-	position: absolute;
-	top: 35px;
-	left: 35px;
-	border-top: 3px solid #d7dce1;
-	border-left: 3px solid #d7dce1;
-	transition: all 0.5s ease 0s;
-	z-index: 9994;
-}
-
-.portfolio .portfolio-wrap .portfolio-info::after {
-	display: block;
-	content: "";
-	width: 48px;
-	height: 48px;
-	position: absolute;
-	bottom: 35px;
-	right: 35px;
-	border-bottom: 3px solid #d7dce1;
-	border-right: 3px solid #d7dce1;
-	transition: all 0.5s ease 0s;
-	z-index: 9994;
-}
-
-.portfolio .portfolio-wrap .portfolio-info h4 {
-	font-size: 20px;
-	color: #45505b;
-	font-weight: 600;
-}
-
-.portfolio .portfolio-wrap .portfolio-info p {
-	color: #45505b;
-	font-size: 14px;
-	text-transform: uppercase;
-	padding: 0;
-	margin: 0;
-}
-
-.portfolio .portfolio-wrap .portfolio-links {
-	text-align: center;
-	z-index: 4;
-}
-
-.portfolio .portfolio-wrap .portfolio-links a {
-	color: #45505b;
-	margin: 0 2px;
-	font-size: 28px;
-	display: inline-block;
-	transition: 0.3s;
-}
-
-.portfolio .portfolio-wrap .portfolio-links a:hover {
-	color: #148af9;
-}
-
-.portfolio .portfolio-wrap:hover::before {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info {
-	opacity: 1;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info::before {
-	top: 15px;
-	left: 15px;
-}
-
-.portfolio .portfolio-wrap:hover .portfolio-info::after {
-	bottom: 15px;
-	right: 15px;
-}
-
-/*--------------------------------------------------------------
-# Portfolio Details
---------------------------------------------------------------*/
-.portfolio-details {
-	padding-top: 40px;
-}
-
-.portfolio-details .portfolio-details-slider img {
-	width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-	margin-top: 20px;
-	position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-	width: 12px;
-	height: 12px;
-	background-color: #fff;
-	opacity: 1;
-	border: 1px solid #0563bb;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-	background-color: #0563bb;
-}
-
-.swiper {
-	overflow: visible;
-}
-
-.portfolio-details .portfolio-info {
-	padding: 30px;
-	box-shadow: 0px 0 30px rgba(69, 80, 91, 0.08);
-}
-
-.portfolio-details .portfolio-info h3 {
-	font-size: 22px;
-	font-weight: 700;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #eee;
-}
-
-.portfolio-details .portfolio-info ul {
-	list-style: none;
-	padding: 0;
-	font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li + li {
-	margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-	padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-	font-size: 26px;
-	font-weight: 700;
-	margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-	padding: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1212,12 +1064,6 @@ h6 {
 .services .icon-box .icon svg path {
 	transition: 0.5s;
 }
-/* .bg-light .services .icon-box .icon svg path {
-  fill: #f0f0f0 !important;
-}
-.bg-dark .services .icon-box .icon svg path {
-  fill: #29292941 !important;
-} */
 
 .services .icon-box h4 {
 	font-weight: 600;
@@ -1383,11 +1229,11 @@ h6 {
 	height: 12px;
 	background-color: #fff;
 	opacity: 1;
-	border: 1px solid #0563bb;
+	border: 1px solid var(--sky-600);
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-	background-color: #0563bb;
+	background-color: var(--sky-600);
 }
 
 @media (min-width: 992px) {
@@ -1448,8 +1294,8 @@ h6 {
 .bg-light .say-hi:hover {
 	width: 150px;
 	background: #fff;
-	color: #0563bb;
-	border: 2px solid #0563bb;
+	color: var(--sky-600);
+	border: 2px solid var(--sky-600);
 	box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -1525,7 +1371,7 @@ h6 {
 
 .contact .info i {
 	font-size: 20px;
-	color: #0563bb;
+	color: var(--sky-600);
 	float: left;
 	width: 44px;
 	height: 44px;
@@ -1560,7 +1406,7 @@ h6 {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-	background: #0563bb;
+	background: var(--sky-600);
 	color: #fff;
 }
 
@@ -1631,7 +1477,7 @@ h6 {
 }
 
 .contact .php-email-form button[type="submit"] {
-	background: #0563bb;
+	background: var(--sky-600);
 	border: 0;
 	padding: 10px 35px;
 	color: #fff;
@@ -1695,7 +1541,7 @@ h6 {
 #footer .social-links a {
 	font-size: 18px;
 	display: inline-block;
-	background: #0563bb;
+	background: var(--sky-600);
 	color: #fff;
 	line-height: 1;
 	padding: 8px 0;

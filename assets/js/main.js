@@ -270,11 +270,12 @@
 	 */
 	window.addEventListener("load", () => {
 		AOS.init({
-			duration: 800,
+			duration: 700,
 			easing: "ease-in-out",
 			once: false,
 			mirror: false,
-			offset: 200,
+			delay: 100,
+			offset: 100,
 		});
 	});
 
