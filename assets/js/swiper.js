@@ -1,5 +1,8 @@
 var servicesSwiper = new Swiper('.servicesSwiper', {
 	loop: true,
+	allowTouchMove: true,
+	simulateTouch: true,
+	grabCursor: true,
 	slidesPerView: 1,
 	spaceBetween: 10,
 	pagination: {
@@ -17,6 +20,9 @@ var servicesSwiper = new Swiper('.servicesSwiper', {
 
 var mySwiper = new Swiper('.mySwiper', {
 	loop: true,
+	allowTouchMove: true,
+	simulateTouch: true,
+	grabCursor: true,
 	slidesPerView: 1,
 	spaceBetween: 10,
 	pagination: {
