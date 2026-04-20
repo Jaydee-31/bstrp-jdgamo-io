@@ -10,6 +10,12 @@ function loadGallery() {
 		{ path: 'assets/img/portfolio/frames/', prefix: 'frame', count: 10, filter: 'filter-frames' },
 		{ path: 'assets/img/portfolio/logo/', prefix: 'logo', count: 10, filter: 'filter-logos' },
 		{
+			path: 'assets/img/portfolio/banners/',
+			prefix: 'banner',
+			count: 14,
+			filter: 'filter-banners',
+		},
+		{
 			path: 'assets/img/portfolio/pubmats/',
 			prefix: 'pubmat',
 			count: 19,
@@ -58,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Set Logo filter as active by default
 	const logoFilter = Array.from(filterButtons).find(
-		(btn) => btn.getAttribute('data-filter') === '.filter-logos'
+		(btn) => btn.getAttribute('data-filter') === '.filter-banners'
 	);
 	if (logoFilter) {
 		filterButtons.forEach((b) => b.classList.remove('filter-active'));
@@ -67,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Show only logo images on load
 		const galleryItems = document.querySelectorAll('.masonry img');
 		galleryItems.forEach((item) => {
-			if (item.classList.contains('filter-logos')) {
+			if (item.classList.contains('filter-banners')) {
 				item.style.display = 'block';
 			} else {
 				item.style.display = 'none';
