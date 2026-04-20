@@ -537,6 +537,10 @@ h6 {
 }
 
 @media (max-width: 992px) {
+	.hero .cta {
+		display: flex;
+		justify-content: center;
+	}
 	.bg-light #hero {
 		text-align: center;
 	}
