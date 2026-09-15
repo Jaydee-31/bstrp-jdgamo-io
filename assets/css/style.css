@@ -193,38 +193,37 @@ h6 {
 --------------------------------------------------------------*/
 .bg-light #header {
 	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	z-index: 9997;
-	transition: all 0.5s;
-	padding: 15px;
+	transition: left 0.5s;
+	padding: 20px 15px;
 	overflow-y: auto;
+	width: 300px;
+	max-width: calc(100% - 40px);
+	max-height: calc(100% - 40px);
+	background: #f6f6f6;
+	border: 1px solid #e6e9ec;
+	border-radius: 24px;
+	box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.08);
+	left: -320px;
 }
 .bg-dark #header {
 	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	z-index: 9997;
-	transition: all 0.5s;
-	padding: 15px;
+	transition: left 0.5s;
+	padding: 20px 15px;
 	overflow-y: auto;
-}
-
-@media (max-width: 991px) {
-	.bg-light #header {
-		width: 300px;
-		background: #f6f6f6;
-		border-right: 1px solid #e6e9ec;
-		left: -300px;
-	}
-	.bg-dark #header {
-		width: 300px;
-		background: var(--gray-950);
-		border-right: 1px solid #1b1b1b;
-		left: -300px;
-	}
+	width: 300px;
+	max-width: calc(100% - 40px);
+	max-height: calc(100% - 40px);
+	background: var(--gray-950);
+	border: 1px solid #1b1b1b;
+	border-radius: 24px;
+	box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.35);
+	left: -320px;
 }
 
 /* @media only screen and (min-width: 992px)  {
@@ -245,7 +244,7 @@ h6 {
 }
 @media (min-width: 992px) {
 	main {
-		padding: 60px 100px;
+		padding: 60px 0px 60px 260px;
 	}
 	section {
 		/* margin: 0 0 0 100px; */
@@ -261,13 +260,13 @@ h6 {
 * Desktop Navigation 
 */
 
-.bg-light .nav-link {
+.bg-light .nav-link:hover {
 	background: #ffffff;
 	color: #000;
 	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.095);
 }
 
-.bg-dark .nav-link {
+.bg-dark .nav-link:hover {
 	background: #0f1721;
 	color: #f0f0f0 !important;
 }
@@ -286,6 +285,10 @@ h6 {
 .nav-menu > ul > li {
 	position: relative;
 	white-space: nowrap;
+}
+
+.nav-menu > ul > li:last-child a {
+	margin-bottom: 0;
 }
 
 .nav-menu a,
@@ -315,32 +318,12 @@ h6 {
 	font-family: 'Poppins', sans-serif;
 }
 
-@media (min-width: 992px) {
-	.nav-menu a,
-	.nav-menu a:focus {
-		width: 56px;
-	}
-
-	.nav-menu a span,
-	.nav-menu a:focus span {
-		display: none;
-		color: #fff;
-	}
-}
-
 .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
 .nav-menu li:hover > a {
 	color: #fff;
 	background: var(--sky-600);
-}
-
-.nav-menu a:hover span,
-.nav-menu .active span,
-.nav-menu .active:focus span,
-.nav-menu li:hover > a span {
-	color: #fff;
 }
 
 .nav-menu a:hover,
@@ -386,12 +369,59 @@ h6 {
 }
 
 .mobile-nav-active #header {
-	left: 0;
+	left: 20px;
 }
 
 .mobile-nav-active .mobile-nav-toggle {
 	color: #fff;
 	background: var(--sky-600);
+}
+
+/**
+* Sidebar social links
+*/
+.header-socials {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+	margin-top: auto;
+	padding-top: 100px;
+}
+
+.header-socials a {
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	transition: 0.3s;
+}
+
+.bg-light .header-socials a {
+	background: #eef1f4;
+	color: #45505b;
+}
+
+.bg-dark .header-socials a {
+	background: #1b1b1b;
+	color: #e9e9e9;
+}
+
+.header-socials a:hover {
+	background: var(--sky-600);
+	color: #fff;
+}
+
+/**
+* Persistent sidebar on desktop
+*/
+@media (min-width: 992px) {
+	.bg-light #header,
+	.bg-dark #header {
+		left: 20px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -415,10 +445,10 @@ h6 {
 
 @media (min-width: 992px) {
 	.bg-light #hero {
-		padding-left: 160px;
+		padding-left: 360px;
 	}
 	.bg-dark #hero {
-		padding-left: 160px;
+		padding-left: 360px;
 	}
 }
 
@@ -502,7 +532,7 @@ h6 {
 
 @media (min-width: 992px) {
 	.bg-light #hero {
-		padding-left: 160px;
+		padding-left: 360px;
 	}
 }
 
@@ -571,7 +601,7 @@ h6 {
 
 @media (min-width: 992px) {
 	.bg-dark #hero {
-		padding-left: 160px;
+		padding-left: 360px;
 	}
 }
 
@@ -983,6 +1013,26 @@ h6 {
 
 .swiper {
 	overflow: visible;
+}
+
+/* Fade the slides that spill past the section instead of cutting them off */
+@media (min-width: 992px) {
+	.swiper {
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0,
+			#000 90px,
+			#000 calc(100% - 90px),
+			transparent 100%
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent 0,
+			#000 90px,
+			#000 calc(100% - 90px),
+			transparent 100%
+		);
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1586,6 +1636,12 @@ h6 {
 	font-size: 14px;
 	text-align: center;
 	padding: 30px 0;
+}
+
+@media (min-width: 992px) {
+	#footer {
+		padding-left: 340px;
+	}
 }
 
 #footer h3 {
