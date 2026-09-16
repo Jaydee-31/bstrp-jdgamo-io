@@ -1,0 +1,321 @@
+/*--------------------------------------------------------------
+# Editorial layout — Skills / Toolbox / Experience / Education / Recognitions
+--------------------------------------------------------------*/
+
+.bg-light .editorial {
+	--ed-rule: rgba(16, 16, 16, 0.16);
+	--ed-fg: rgb(16, 16, 16);
+	--ed-muted: rgba(16, 16, 16, 0.58);
+	--ed-faint: rgba(16, 16, 16, 0.42);
+	--ed-accent: var(--sky-600);
+}
+
+.bg-dark .editorial {
+	--ed-rule: rgba(255, 255, 255, 0.13);
+	--ed-fg: rgb(247, 247, 247);
+	--ed-muted: rgba(247, 247, 247, 0.6);
+	--ed-faint: rgba(247, 247, 247, 0.42);
+	--ed-accent: var(--sky-500);
+}
+
+/* --- block shell --- */
+.ed-block {
+	border-top: 1px solid var(--ed-rule);
+	padding-top: 1rem;
+	padding-bottom: 5rem;
+}
+
+.ed-block:last-child {
+	padding-bottom: 0;
+}
+
+.ed-eyebrow {
+	font-size: 0.6875rem;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	color: var(--ed-faint);
+	margin-bottom: 2.25rem;
+}
+
+.ed-body {
+	display: grid;
+	grid-template-columns: minmax(170px, 1fr) 2.4fr;
+	column-gap: 3rem;
+	row-gap: 2rem;
+	align-items: start;
+}
+
+.ed-heading {
+	font-family: 'Big Shoulders Display', 'Poppins', sans-serif;
+	font-size: clamp(2.75rem, 6vw, 4.25rem);
+	font-weight: 600;
+	line-height: 0.85;
+	letter-spacing: 0.01em;
+	color: var(--ed-fg);
+	margin: 0;
+}
+
+/* --- skills: category columns --- */
+.ed-columns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 3rem;
+	row-gap: 3rem;
+}
+
+.ed-group-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+	font-weight: 500;
+	line-height: 1.2;
+	color: var(--ed-fg);
+	margin: 0 0 0.85rem;
+}
+
+.ed-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ed-list li {
+	font-size: 0.8125rem;
+	font-weight: 400;
+	line-height: 1.95;
+	color: var(--ed-muted);
+}
+
+/* --- toolbox: inline flow with icons --- */
+.ed-toolbox {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 0.5rem;
+	font-size: clamp(1.05rem, 2vw, 1.5rem);
+	font-weight: 500;
+	line-height: 1.35;
+	color: var(--ed-fg);
+}
+
+.ed-tool {
+	display: inline-flex;
+	align-items: center;
+	transition: color 0.25s ease;
+}
+
+.ed-tool img {
+	width: 1.05em;
+	height: 1.05em;
+	margin-right: 0.4em;
+	object-fit: contain;
+	border-radius: 4px;
+	transition: transform 0.25s ease;
+}
+
+.ed-tool::after {
+	content: '·';
+	color: var(--ed-accent);
+	font-weight: 700;
+	margin: 0 0.5em;
+}
+
+.ed-tool:last-child::after {
+	content: none;
+}
+
+.ed-tool:hover {
+	color: var(--ed-accent);
+}
+
+.ed-tool:hover img {
+	transform: translateY(-2px) scale(1.08);
+}
+
+/* --- experience / education entries --- */
+.ed-entries {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ed-entries > li + li {
+	margin-top: 1.5rem;
+	border-top: 1px solid var(--ed-rule);
+	padding-top: 1.5rem;
+}
+
+/* --- entry accordion --- */
+.ed-entry-summary {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1.5rem;
+	cursor: pointer;
+	list-style: none;
+	transition: opacity 0.25s ease;
+}
+
+.ed-entry-summary::-webkit-details-marker {
+	display: none;
+}
+
+.ed-entry-summary:hover {
+	opacity: 0.72;
+}
+
+.ed-entry-summary:focus-visible {
+	outline: 1px solid var(--ed-accent);
+	outline-offset: 6px;
+}
+
+.ed-entry-head {
+	display: block;
+	min-width: 0;
+}
+
+.ed-entry-toggle {
+	position: relative;
+	flex: 0 0 auto;
+	width: 13px;
+	height: 13px;
+	margin-top: 0.45em;
+}
+
+.ed-entry-toggle::before,
+.ed-entry-toggle::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 13px;
+	height: 1px;
+	background: var(--ed-accent);
+	transform: translate(-50%, -50%);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.ed-entry-toggle::after {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.ed-entry[open] .ed-entry-toggle::after {
+	transform: translate(-50%, -50%) rotate(0deg);
+	opacity: 0;
+}
+
+.ed-entry-panel {
+	overflow: hidden;
+}
+
+.ed-entry-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+	font-weight: 500;
+	line-height: 1.25;
+	color: var(--ed-fg);
+	margin: 0;
+}
+
+.ed-entry-org {
+	font-family: 'Lexend Deca', sans-serif;
+	font-size: 0.8125rem;
+	font-weight: 400;
+	color: var(--ed-muted);
+	white-space: nowrap;
+}
+
+.ed-entry-meta {
+	display: block;
+	font-size: 0.6875rem;
+	letter-spacing: 0.02em;
+	color: var(--ed-faint);
+	margin-top: 0.4rem;
+}
+
+.ed-entry-notes {
+	list-style: none;
+	margin: 1rem 0 0;
+	padding: 0;
+	max-width: 62ch;
+}
+
+.ed-entry-notes li {
+	position: relative;
+	padding-left: 1.1rem;
+	font-size: 0.78rem;
+	line-height: 1.75;
+	color: var(--ed-muted);
+}
+
+.ed-entry-notes li + li {
+	margin-top: 0.35rem;
+}
+
+.ed-entry-notes li::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0.72em;
+	width: 6px;
+	height: 1px;
+	background: var(--ed-accent);
+}
+
+/* --- recognitions --- */
+.ed-awards {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 3rem;
+	row-gap: 2rem;
+}
+
+.ed-award-title {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.35;
+	color: var(--ed-fg);
+	margin: 0 0 0.3rem;
+}
+
+.ed-award-org {
+	display: block;
+	font-size: 0.72rem;
+	letter-spacing: 0.02em;
+	color: var(--ed-faint);
+}
+
+/* --- responsive --- */
+@media (max-width: 991px) {
+	.ed-body {
+		grid-template-columns: 1fr;
+		row-gap: 1.75rem;
+	}
+
+	.ed-block {
+		padding-bottom: 3.5rem;
+	}
+
+	.ed-columns,
+	.ed-awards {
+		column-gap: 2rem;
+		row-gap: 2.25rem;
+	}
+}
+
+@media (max-width: 575px) {
+	.ed-columns,
+	.ed-awards {
+		grid-template-columns: 1fr;
+	}
+
+	.ed-eyebrow {
+		margin-bottom: 1.5rem;
+	}
+
+	.ed-entry-org {
+		display: block;
+		white-space: normal;
+		margin-top: 0.25rem;
+	}
+}

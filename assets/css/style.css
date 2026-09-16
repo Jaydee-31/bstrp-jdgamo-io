@@ -833,174 +833,6 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
-.skills .title {
-	text-align: left;
-	margin-bottom: 1.5rem;
-}
-
-.skills .card-body .row .col {
-	margin-bottom: 1.5rem;
-}
-.bg-light .skills .card {
-	background-color: #fff;
-}
-.bg-dark .skills .card {
-	background-color: #0f1721;
-}
-.skills .card {
-	text-align: center;
-	padding: 20px 20px;
-	transition: all ease-in-out 0.3s;
-	border-radius: 20px;
-	box-shadow: 0 15px 20px 0px rgba(0, 0, 0, 0.1);
-}
-.bg-dark .skills .card .skill {
-	font-size: 12px;
-	text-align: left;
-	font-weight: 500;
-	background-image: none;
-	background-color: var(--gray-950) !important;
-}
-
-.bg-light .skills .card .skill {
-	text-align: left;
-	font-size: 12px;
-	font-weight: 500;
-	background-image: none;
-	background-color: #d7dce1 !important;
-}
-.skills .card:hover {
-	border-color: #fff;
-	box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
-	transform: scale(1.05) rotate(-2deg);
-}
-.skills .card .col:hover {
-	transition: all ease-in-out 0.3s;
-	transform: scale(1.05) rotate(-1deg);
-}
-.skills .title i {
-	font-size: 30px;
-
-	display: inline-flex;
-	align-items: center;
-	width: 48px;
-	height: 48px;
-}
-.skills .skill i {
-	font-size: 45px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 10px;
-	width: 40px;
-	height: 40px;
-	fill: #ff5828;
-}
-.skills .skill img {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	margin-right: 10px;
-	border-radius: 5px;
-	width: 40px;
-	height: 40px;
-	object-fit: contain;
-	fill: #ff5828;
-}
-@media only screen and (max-width: 768px) {
-	.skills .card-body .title {
-		margin-bottom: 0.5rem;
-	}
-	.skills .card {
-		text-align: left;
-		padding: 5px 5px;
-		transition: all ease-in-out 0.3s;
-		border-radius: 20px;
-		box-shadow: 0 15px 20px 0px rgba(0, 0, 0, 0.1);
-	}
-	.skills .card-body .row .col {
-		margin-bottom: 0;
-		padding: 5px 5px;
-	}
-}
-
-/*--------------------------------------------------------------
-# Resume
---------------------------------------------------------------*/
-.resume ul {
-	padding-left: 0;
-}
-.resume .resume-title {
-	font-size: 20px;
-	font-weight: 600;
-	margin-top: 20px;
-	margin-bottom: 40px;
-	text-decoration: underline;
-	text-underline-offset: 8px;
-}
-
-.resume .resume-item {
-	padding: 0 0 20px 20px;
-	margin-top: -2px;
-	border-left: 2px solid var(--sky-600);
-	position: relative;
-}
-
-.resume .resume-item h4 {
-	line-height: 18px;
-	font-size: 16px;
-	font-weight: 600;
-
-	color: var(--sky-600);
-	margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-	font-size: 14px;
-	padding: 5px 15px;
-	display: inline-block;
-	font-weight: 600;
-	margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-	padding-left: 0px;
-}
-
-.resume .resume-item ul li {
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 1.6;
-	opacity: 0.8;
-	padding-bottom: 10px;
-}
-.resume .resume-item p {
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 1.6;
-	opacity: 0.8;
-	padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-	padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-	content: '';
-	position: absolute;
-	width: 16px;
-	height: 16px;
-	border-radius: 50px;
-	left: -9px;
-	top: 0;
-	background: #ebebeb;
-	border: 2px solid var(--sky-600);
-}
-
-/*--------------------------------------------------------------
 # Portfolio1
 --------------------------------------------------------------*/
 .bg-dark .swiper-pagination-bullet {
@@ -1039,17 +871,31 @@ h6 {
 # Portfolio2
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
-	padding: 0;
 	margin: 0 auto 25px auto;
 	list-style: none;
 	text-align: center;
 	border-radius: 50px;
 	padding: 2px 15px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	max-width: 100%;
+	min-width: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.portfolio #portfolio-flters::-webkit-scrollbar {
+	display: none;
 }
 
 .portfolio #portfolio-flters li {
 	cursor: pointer;
-	display: inline-block;
+	flex: 0 0 auto;
+	white-space: nowrap;
 	padding: 10px 15px;
 	font-size: 14px;
 	font-weight: 600;

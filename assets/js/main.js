@@ -164,23 +164,6 @@
 	}
 
 	/**
-	 * Skills animation
-	 */
-	let skilsContent = select(".skills-content");
-	if (skilsContent) {
-		new Waypoint({
-			element: skilsContent,
-			offset: "80%",
-			handler: function (direction) {
-				let progress = select(".progress .progress-bar", true);
-				progress.forEach((el) => {
-					el.style.width = el.getAttribute("aria-valuenow") + "%";
-				});
-			},
-		});
-	}
-
-	/**
 	 * Porfolio isotope and filter
 	 */
 	window.addEventListener("load", () => {
@@ -276,6 +259,48 @@
 			mirror: false,
 			delay: 100,
 			offset: 100,
+		});
+	});
+
+	/**
+	 * Experience entries accordion (animated <details>)
+	 */
+	select(".ed-entry", true).forEach((entry) => {
+		const summary = entry.querySelector(".ed-entry-summary");
+		const panel = entry.querySelector(".ed-entry-panel");
+		if (!summary || !panel) return;
+
+		// No Web Animations API or the visitor prefers less motion: keep the native toggle
+		if (typeof panel.animate !== "function" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+		let animation = null;
+		let closing = false;
+
+		const run = (startHeight, endHeight, open) => {
+			if (animation) animation.cancel();
+			closing = !open;
+			animation = panel.animate(
+				{ height: [`${startHeight}px`, `${endHeight}px`] },
+				{ duration: 300, easing: "cubic-bezier(0.25, 0.1, 0.25, 1)" }
+			);
+			animation.onfinish = () => {
+				animation = null;
+				closing = false;
+				entry.open = open;
+				if (typeof AOS !== "undefined") AOS.refresh();
+			};
+		};
+
+		summary.addEventListener("click", (e) => {
+			e.preventDefault();
+			const startHeight = panel.getBoundingClientRect().height;
+
+			if (entry.open && !closing) {
+				run(startHeight, 0, false);
+			} else {
+				entry.open = true;
+				run(startHeight, panel.scrollHeight, true);
+			}
 		});
 	});
 
