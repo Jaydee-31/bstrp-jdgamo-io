@@ -97,10 +97,17 @@
 	/**
 	 * Mobile nav toggle
 	 */
+	const setMobileNav = (open) => {
+		select("body").classList.toggle("mobile-nav-active", open);
+		let toggle = select(".mobile-nav-toggle");
+		if (toggle) {
+			toggle.classList.toggle("fa-bars", !open);
+			toggle.classList.toggle("fa-xmark", open);
+		}
+	};
+
 	on("click", ".mobile-nav-toggle", function (e) {
-		select("body").classList.toggle("mobile-nav-active");
-		this.classList.toggle("bi-list");
-		this.classList.toggle("bi-x");
+		setMobileNav(!select("body").classList.contains("mobile-nav-active"));
 	});
 
 	/**
@@ -113,12 +120,8 @@
 			if (select(this.hash)) {
 				e.preventDefault();
 
-				let body = select("body");
-				if (body.classList.contains("mobile-nav-active")) {
-					body.classList.remove("mobile-nav-active");
-					let navbarToggle = select(".mobile-nav-toggle");
-					navbarToggle.classList.toggle("bi-list");
-					navbarToggle.classList.toggle("bi-x");
+				if (select("body").classList.contains("mobile-nav-active")) {
+					setMobileNav(false);
 				}
 				scrollto(this.hash);
 			}

@@ -46,7 +46,7 @@
 }
 
 .ed-heading {
-	font-family: 'Big Shoulders Display', 'Poppins', sans-serif;
+	font-family: var(--font-title);
 	font-size: clamp(2.75rem, 6vw, 4.25rem);
 	font-weight: 600;
 	line-height: 0.85;
@@ -64,9 +64,9 @@
 }
 
 .ed-group-title {
-	font-family: 'Poppins', sans-serif;
-	font-size: clamp(1.15rem, 2.2vw, 1.6rem);
-	font-weight: 500;
+	font-family: var(--font-title);
+	font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+	font-weight: 600;
 	line-height: 1.2;
 	color: var(--ed-fg);
 	margin: 0 0 0.85rem;
@@ -191,7 +191,9 @@
 	height: 1px;
 	background: var(--ed-accent);
 	transform: translate(-50%, -50%);
-	transition: transform 0.3s ease, opacity 0.3s ease;
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
 }
 
 .ed-entry-toggle::after {
@@ -208,16 +210,16 @@
 }
 
 .ed-entry-title {
-	font-family: 'Poppins', sans-serif;
-	font-size: clamp(1.15rem, 2.2vw, 1.6rem);
-	font-weight: 500;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+	font-weight: 600;
 	line-height: 1.25;
 	color: var(--ed-fg);
 	margin: 0;
 }
 
 .ed-entry-org {
-	font-family: 'Lexend Deca', sans-serif;
+	font-family: var(--font-main);
 	font-size: 0.8125rem;
 	font-weight: 400;
 	color: var(--ed-muted);
@@ -270,9 +272,9 @@
 }
 
 .ed-award-title {
-	font-family: 'Poppins', sans-serif;
-	font-size: 1rem;
-	font-weight: 500;
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1.15rem;
+	font-weight: 600;
 	line-height: 1.35;
 	color: var(--ed-fg);
 	margin: 0 0 0.3rem;
