@@ -26,28 +26,23 @@ label {
 	cursor: pointer;
    
 }
-.bg-dark .label {
-    outline: #ffffff solid 5px;
-    background-color: #ffffff;
-}
+.bg-dark .label,
 .bg-light .label {
-    background-color: #172439;
-    outline: #172439 solid 5px;
+    background-color: var(--accent);
+    outline: var(--accent) solid 5px;
 }
-label .bxs-moon {
-	color: rgb(0, 0, 0);
-
-}
+/* stone-500 is the one stop that clears 3:1 against BOTH the track
+   (--accent) and the blob (--accent-contrast), in either theme. */
+label .bxs-moon,
 label .bxs-sun {
-	color: #fff;
-   
+	color: var(--stone-500);
 }
 .blob {
 	position: absolute;
 	right: 65%;
 	width: 15px;
 	height: 100%;
-	background: #ffdd00;
+	background: var(--accent-contrast);
 	border-radius: 50px;
 	transition: .5s ease all;
 }

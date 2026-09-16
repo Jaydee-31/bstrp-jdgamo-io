@@ -33,9 +33,9 @@
 	flex-basis: 35%;
 	scroll-snap-align: center;
 	margin: 20px 20px;
-	background-color: rgb(255, 255, 255);
+	background-color: var(--surface-raised);
 	border-radius: 20px;
-	box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.148);
+	box-shadow: 0 5px 10px 0px rgb(var(--shadow-color) / 0.148);
 	overflow: hidden;
 }
 .portfolio .card-group.card-group-scroll > .card img {
@@ -79,7 +79,7 @@
 	overflow: hidden;
 	height: stretch;
 	border-radius: 20px;
-	box-shadow: 0 15px 20px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 15px 20px 0px rgb(var(--shadow-color) / 0.1);
 }
 
 .swiper-slide img {

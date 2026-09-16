@@ -2,20 +2,23 @@
 # Editorial layout — Skills / Toolbox / Experience / Education / Recognitions
 --------------------------------------------------------------*/
 
+/* Local aliases onto the stone ramp in style.css. Opaque stops are used
+   instead of alpha-on-surface so the muted/faint steps hold their
+   measured contrast regardless of what sits behind the section. */
 .bg-light .editorial {
-	--ed-rule: rgba(16, 16, 16, 0.16);
-	--ed-fg: rgb(16, 16, 16);
-	--ed-muted: rgba(16, 16, 16, 0.58);
-	--ed-faint: rgba(16, 16, 16, 0.42);
-	--ed-accent: var(--sky-600);
+	--ed-rule: var(--border);
+	--ed-fg: var(--text);
+	--ed-muted: var(--stone-600); /* 6.5:1 on paper */
+	--ed-faint: var(--stone-500); /* 4.7:1 on paper */
+	--ed-accent: var(--accent);
 }
 
 .bg-dark .editorial {
-	--ed-rule: rgba(255, 255, 255, 0.13);
-	--ed-fg: rgb(247, 247, 247);
-	--ed-muted: rgba(247, 247, 247, 0.6);
-	--ed-faint: rgba(247, 247, 247, 0.42);
-	--ed-accent: var(--sky-500);
+	--ed-rule: var(--border);
+	--ed-fg: var(--text);
+	--ed-muted: var(--stone-300); /* 9.6:1 on ink */
+	--ed-faint: var(--stone-400); /* 8.1:1 on ink */
+	--ed-accent: var(--accent);
 }
 
 /* --- block shell --- */
