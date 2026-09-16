@@ -64,7 +64,7 @@
 }
 
 .ed-group-title {
-	font-family: var(--font-title);
+	font-family: var(--font-main);
 	font-size: clamp(1.3rem, 2.4vw, 1.75rem);
 	font-weight: 600;
 	line-height: 1.2;
