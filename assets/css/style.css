@@ -471,47 +471,48 @@ h3 {
 	--glow-mid: var(--stone-400);
 	--glow-deep: var(--stone-600);
 
+	/* Dot matrix surface */
+	--dot-size: 1.5px;
+	--dot-gap: 22px;
+
 	position: relative;
 	width: 100%;
 	min-height: 100vh;
 	overflow: hidden;
+	background-color: var(--surface);
 }
 
+/* --hero-halo sits *above* the surface it glows against, so it lifts rather
+   than just knocking the dots out: pure white over --paper in light mode,
+   and one step up from --ink in dark. */
 .bg-light #hero {
-	background: url('../img/hero-bg.jpg') top right no-repeat;
-	background-size: cover;
+	--dot-color: var(--stone-300);
+	--hero-halo: #ffffff;
 }
 
 .bg-dark #hero {
-	background: url('../img/dark-hero-bg.jpg') top right no-repeat;
-	background-size: cover;
+	--dot-color: var(--stone-700);
+	--hero-halo: var(--surface-raised);
 }
 
-.bg-light #hero:before,
-.bg-dark #hero:before {
-	content: '';
+/* The matrix itself. Drawn by hero-dots.js, which reads --dot-gap, --dot-size
+   and --dot-color back out of this rule — a tiled gradient can only pan as a
+   whole, so the per-dot wave needs a canvas. The edge fade stays a CSS mask,
+   on its own layer so it cannot touch the hero's content. */
+.hero-dots {
 	position: absolute;
 	inset: 0;
-}
-
-.bg-light #hero:before {
-	background: color-mix(in srgb, var(--paper), transparent 12%);
-}
-
-.bg-dark #hero:before {
-	background: color-mix(in srgb, var(--ink), transparent 8%);
+	width: 100%;
+	height: 100%;
+	display: block;
+	-webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 35%, transparent 100%);
+	mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 35%, transparent 100%);
+	pointer-events: none;
 }
 
 @media (min-width: 992px) {
 	#hero {
 		padding-left: 360px;
-	}
-
-	/* Absolute children resolve against the padding box, so the cue would
-	   centre on the viewport rather than under the portrait. Clear the
-	   sidebar by the same amount the section does. */
-	.hero-scroll {
-		left: 360px;
 	}
 }
 
@@ -525,6 +526,9 @@ h3 {
 	gap: clamp(16px, 3vw, 48px);
 	width: 100%;
 	padding: 40px clamp(20px, 4vw, 64px);
+	/* Auto margins beat justify-content for free space, so the stage centres
+	   itself in the room left above .hero-scroll. */
+	margin-block: auto;
 }
 
 .hero-col-name {
@@ -537,6 +541,15 @@ h3 {
 	text-align: left;
 	justify-self: start;
 	max-width: 14ch;
+}
+
+/* Lift off the dot matrix. The --hero-halo layers glow outward and clear the
+   dots around the glyphs; the last layer is the actual cast shadow, which is
+   near-invisible in dark mode where the halo does all the work. */
+.hero-name,
+.hero-role {
+	text-shadow: 0 0 28px var(--hero-halo), 0 0 14px var(--hero-halo), 0 0 5px var(--hero-halo),
+		0 2px 12px rgb(var(--shadow-color) / 0.28);
 }
 
 .hero-name {
@@ -583,6 +596,8 @@ h3 {
 	font-size: clamp(0.8rem, 1vw, 0.95rem);
 	font-weight: 500;
 	line-height: 1.7;
+	/* Halo only — small text picks up mud from a cast shadow. */
+	text-shadow: 0 0 14px var(--hero-halo), 0 0 5px var(--hero-halo);
 }
 
 .bg-light .hero-meta {
@@ -631,6 +646,8 @@ h3 {
 	border-color: var(--border-strong);
 }
 
+/* The shadow lives on the glow disc, not the img, so it still reads if the
+   photo is later swapped for a cut-out PNG. */
 .hero-portrait-glow {
 	position: absolute;
 	inset: 0;
@@ -641,6 +658,10 @@ h3 {
 		var(--glow-mid) 45%,
 		var(--glow-deep) 100%
 	);
+	/* Cast shadows first so they paint over the halo; the halo is listed last
+	   so it sits underneath and spreads past them into the dot field. */
+	box-shadow: 0 24px 60px -12px rgb(var(--shadow-color) / 0.45), 0 8px 20px -8px rgb(var(--shadow-color) / 0.3),
+		0 0 48px 16px var(--hero-halo);
 }
 
 .hero-portrait img {
@@ -658,10 +679,11 @@ h3 {
 .hero-scroll {
 	--scroll-cue: var(--text-subtle);
 
+	/* In flow. .hero-stage carries `margin-block: auto`, which eats the free
+	   space above and below it, leaving this pinned to the bottom of #hero
+	   without taking it out of the flex column. */
 	position: relative;
-	left: 0;
-	right: 0;
-	/* margin: 4rem auto; */
+	margin-bottom: clamp(12px, 2.5vh, 28px);
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
